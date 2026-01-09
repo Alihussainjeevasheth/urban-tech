@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Bar</title>
+    <link rel="stylesheet" href="style.css">
+     <script src="script.js"></script>
+</head>
+<body>
+    <div class="input-container">
+        <div class="input-wrapper">
+            <input type="text" id="mainInput" placeholder="Ask anything" onkeydown="handleKeyPress(event)">
+        </div>
+        
+        <div class="file-preview" id="filePreview">
+            <span class="file-info" id="fileInfo">📎 File attached</span>
+            <button class="remove-file" onclick="removeFile()">×</button>
+        </div>
+
+        <div class="voice-indicator" id="voiceIndicator">
+            🎤 Listening... (Click mic again to stop)
+        </div>
+        
+        <div class="controls">
+            <div class="model-selector-wrapper">
+                <button class="model-selector" onclick="toggleDropdown()">
+                    <div class="model-icon"></div>
+                    <span id="selectedModel">Smart (GPT-5)</span>
+                    <span class="dropdown-arrow">▼</span>
+                </button>
+                
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <div class="dropdown-item" onclick="selectModel('Smart (GPT-5)')">
+                        <div class="model-icon"></div>
+                        <span>Smart (GPT-5)</span>
+                    </div>
+                    <div class="dropdown-item" onclick="selectModel('Standard (GPT-4)')">
+                        <div class="model-icon" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);"></div>
+                        <span>Standard (GPT-4)</span>
+                    </div>
+                    <div class="dropdown-item" onclick="selectModel('Fast (GPT-3.5)')">
+                        <div class="model-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                        <span>Fast (GPT-3.5)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+
+                 <button class="icon-btn" title="Attach" onclick="attachFile()"> <img class="linkicon" src="change the background.png" alt=""></button>
+                <button class="icon-btn" title="Add" onclick="addContent()">➕</button>
+    
+            </div>
+        </div>
+
+        <div class="output-area" id="outputArea">
+            <div class="output-text" id="outputText"></div>
+        </div>
+    </div>
+
+    <input type="file" id="fileInput" onchange="handleFileSelect(event)">
+
+    
+   
+</body>
+</html>
