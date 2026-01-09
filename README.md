@@ -1,2 +1,2 @@
 # urban-tech
-terms &amp; conditions apllied
+terms & conditions aplied!!
